@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Data Visualisation Exercise 1" />
+  <meta name="keywords" content="HTML, CSS" />
+  <meta name="author" content="Your name here" />
+
+  <title>Task 1.1 HTML and CSS Demo Page</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1,
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    img {
+      width: 500px; /* Adjust width as needed */
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #f5f5f5;
+    }
+
+    .button:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Title of Article about Interesting Visualisation</h1>
+  <h2>Author of Interesting Article</h2>
+  <p>
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+    eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+    voluptatem quia voluptas sit <b>aspernatur</b> aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+    voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+    velit, sed quia <li>non numquam eius modi tempora incidunt</li> ut labore et dolore magnam aliquam quaerat voluptatem.
+  </p>
+  <ul>
+    <li>Lorem ipsum dolor sit.</li>
+    <li>Nulla facilisi. Curabitur scelerisque.</li>
+    <li>Donec ac tristique ipsum.</li>
+    <li>Pellentesque vitae nulla.</li>
+  </ul>
+
+  <div class="button-container">
+    <button class="button" id="btn2019">2019</button>
+    <button class="button" id="btn2021">2021</button>
+    <button class="button" id="btnBoth">Both</button>
+  </div>
+
+  <img id="image" src="/pet_ownership_in_australia_2019.png" alt="Pet ownership in Australia, 2019">
+  <p id="caption">What type of pets did Australians own in 2019, and which were the most/least popular?</p>
+
+  <script>
+    // Function to handle button clicks
+    function switchImage(buttonId, imagePath, captionText) {
+      document.getElementById('image').src = imagePath;
+      document.getElementById('image').alt = captionText;
+      document.getElementById('caption').innerText = captionText;
+
+      // Remove active class from all buttons
+      var buttons = document.getElementsByClassName('button');
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+      }
+
+      // Add active class to the clicked button
+      document.getElementById(buttonId).classList.add('active');
+    }
+
+    // Event listeners for button clicks
+    document.getElementById('btn2019').addEventListener('click', function () {
+      switchImage('btn2019', '/2019.png', 'What type of pets did Australians own in 2019, and which were the most/least popular?');
+    });
+
+    document.getElementById('btn2021').addEventListener('click', function () {
+      switchImage('btn2021', '/2020.png', 'What type of pets did Australians own in 2021, and which were the most/least popular?');
+    });
+
+    document.getElementById('btnBoth').addEventListener('click', function () {
+      switchImage('btnBoth', '/both.png', 'How did pet ownership in 2019 compare with 2021?');
+    });
+  </script>
+
+  <p>
+    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
+    commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+    consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+  </p>
+
+  <footer>COS30045 Data Visualisation</footer>
+</body>
+
+</html>
