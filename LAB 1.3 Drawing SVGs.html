@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Data Visualisation Exercise 1" />
+  <meta name="keywords" content="HTML, CSS" />
+  <meta name="author" content="Your name here" />
+
+  <title>Task 1.1 HTML and CSS Demo Page</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1,
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    img {
+      width: 500px; /* Adjust width as needed */
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align:left;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+    <h1>Drawning Shapes with SVG</h1>
+    <svg width="500" height="60" style="background-color:slategrey;">
+
+        <g transform="translate(20,0)">
+            <circle cx="25", cy="30", r="25" fill="cornflowerblue" />
+            <rect x="50", y="5", width="50", height="50" fill="rgb(100, 149, 237)" /> 
+            <ellipse cx="140" cy="30" rx="40" ry="25" fill="rgba(100, 149, 237, 0.5)" />
+            <Line x1="0" y1="30" x2="180" y2="30" stroke="black" stroke-width="5"/>
+
+            </g>
+        </svg>
+        <br>
+        <br>
+
+        <h2>Pet Owenership 2019</h2>
+        <svg width="600" height="200" style="background-color:slategrey;">
+            <g transform="translate(20,0)">
+                <rect x="50" y="5" width="50" height="40" fill="rgb(100, 149, 237)" />
+                <rect x="100" y="5" width="50" height="27" fill="rgb(100, 149, 237)" />
+                <rect x="150" y="5" width="50" height="11" fill="rgb(100, 149, 237)" />
+                <rect x="200" y="5" width="50" height="9" fill="rgb(100, 149, 237)" />
+                <rect x="250" y="5" width="50" height="3" fill="rgb(100, 149, 237)" />
+                <rect x="300" y="5" width="50" height="2" fill="rgb(100, 149, 237)" />
+                <rect x="350" y="5" width="50" height="2" fill="rgb(100, 149, 237)" />
+            </g>
+        </svg>
+        
+
+
+        
+        <br>
+        <br>
+
+        <footer style="color:grey">COS30045 Data Visualisation<br> Joe Bloggs</footer>
+
+</body>
+
+</html>
