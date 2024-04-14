@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="D3 Tutorial">
+ <meta name="author" content="Your Name">
+
+ <title>D3 Tutorial</title>
+ <h1>Drawning with Data</h1>
+
+ <!-- Include D3.js library -->
+ <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+
+ <!-- Your content goes here -->
+
+ <script>
+    // Step 2: Create SVG element
+    var svg = d3.select("body")
+                .append("svg")
+                .attr("width", 500)
+                .attr("height", 200);
+
+    // Step 3: Add rectangles to the chart
+    var dataset = [40, 27, 11, 9, 3, 2, 2]; // Pets 2019
+    var colors = ["#000000", "#000000", "#000000", "#000000", "#000000", "#000000", "#000000"];
+
+    // Step 4: Space out the bars
+    var barPadding = 1;
+    var barWidth = (500 / dataset.length) - barPadding;
+
+    svg.selectAll("rect")
+       .data(dataset)
+       .enter()
+       .append("rect")
+       .attr("x", function(d, i) {
+         return i * (barWidth + barPadding);
+       })
+       .attr("y", function(d) {
+         return 200 - (d * 4); // Adjusting to scale the bars properly
+       })
+       .attr("width", barWidth)
+       .attr("height", function(d) {
+         return d * 4; // Adjusting to scale the bars properly
+       })
+       .attr("fill", function(d, i) {
+         return colors[i];
+       });
+
+    // Adding labels (Optional - Step 6)
+    svg.selectAll("text")
+       .data(dataset)
+       .enter()
+       .append("text")
+       .text(function(d) {
+         return d;
+       })
+       .attr("x", function(d, i) {
+         return i * (barWidth + barPadding) + barWidth / 2;
+       })
+       .attr("y", function(d) {
+         return 200 - (d * 4) + 15; // Adjusting to scale the bars properly and aligning labels
+       })
+       .attr("font-family", "sans-serif")
+       .attr("font-size", "11px")
+       .attr("fill", "white") // Changed fill color to black for visibility
+       .attr("text-anchor", "middle");
+
+ </script>
+
+</body>
+
+</html>
