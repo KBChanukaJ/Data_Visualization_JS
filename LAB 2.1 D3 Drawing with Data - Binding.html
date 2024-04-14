@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="D3 Tutorial">
+  <meta name="author" content="Your Name">
+
+  <title>D3 Tutorial</title>
+
+  <!-- Include D3.js library -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Your content goes here -->
+
+  <script>
+    // Define data variable containing numbers between 1 and 30
+    var data = [14, 5, 26, 23, 9, 12, 17, 20, 8, 25, 3, 11, 29, 18, 16, 6, 24, 1, 27, 2, 19, 28, 10, 7, 4, 30, 15, 21, 13, 22];
+
+    // Bind data to paragraph elements
+    var p = d3.select("body")
+      .selectAll("p")
+      .data(data)
+      .enter()
+      .append("p")
+      .text(function(d, i) {
+        // Display the index and data value in each paragraph
+        return "Index: " + i + ", Data: " + d;
+      });
+
+    // Example data
+    var joeCatVideos = 14;
+
+    // Append a paragraph element to display the warning
+    d3.select("body")
+      .append("p")
+      .text(function() {
+        if (joeCatVideos > 10) {
+          return "Warning: Joe watches too many cat videos!";
+        } else {
+          return "Joe's cat video consumption is within normal limits.";
+        }
+      });
+  </script>
+
+</body>
+
+</html>
